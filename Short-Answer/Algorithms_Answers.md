@@ -2,7 +2,7 @@
 
 ## Exercise I
 
-a)
+a) O(n). It scales linearly with input size.
 
 
 b)
