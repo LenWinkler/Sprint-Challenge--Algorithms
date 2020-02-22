@@ -97,25 +97,55 @@ class SortingRobot:
         Sort the robot's list.
         """
         # set light on
+        self.set_light_on
         # while light is on
-        # 
+        while self.light_is_on:
+            print(self._list)
         #   move right
+            self.move_right()
         #   swap
+            self.swap_item()
         #   move left
+            self.move_left()
         #   compare
         #   if held is less and robot can move left:
+            print('got to if')
+            print('list at first if', self._list)
+            if self.compare_item() == -1 and self.can_move_left():
         #       move left
+                print('before move in first if', self._position)
+                self.move_left()
+                print('after move in first if', self._position)
         #   elif held is less and robot can't move left or held is equal:
+            elif self.compare_item() == -1 and not self.can_move_left() or self.compare_item() == 0:
+                print('made it to second if', self._position)
         #       swap
+                self.swap_item()
+        #   if held is greater:
+            elif self.compare_item() == 1:
+                print('hit third if', self._position, self._list)
+        #       start while loop to move back to the right
         #       while compare item is not None:
+                while self.compare_item() is not None:
+                    print('made it to while loop')
         #           move right
+                    self.move_right()
         #           swap
-        #           if robot can move right:
-        #               set light on
-        #           else:
-        #               set light off
-
-        pass
+                    self.swap_item()
+        #   while compare item is not None:
+            while self.compare_item() is not None:
+        #       move right
+                self.move_right()
+        #       swap
+                self.swap_item()
+        #       if robot can move right:
+            if self.can_move_right():
+        #          set light on
+                continue
+        #       else:
+            else:
+                self.set_light_off()
+        #          set light off
 
 
 if __name__ == "__main__":
