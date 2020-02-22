@@ -11,7 +11,7 @@ result was ~n.
 
 
 c) Unless it's invoked with 0, I think this one runs forever. The base case is bunnies == 0 but each time the 
-function calls itself, it's effectively calling bunnyEars(bunnies + 1.) 
+function calls itself, it's effectively calling bunnyEars(bunnies + 1.). Would this be O(n!)?
 
 ## Exercise II
 
